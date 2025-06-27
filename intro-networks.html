@@ -2831,6 +2831,886 @@
     ],
     correctAnswer: "A",
     explanation: "The default gateway for a host on the Medical LAN (192.168.201.0/24) is the router’s interface on that LAN, which is 192.168.201.200 (gi0/1)."
+  },
+    {
+    id: 232,
+    text: "What is the prefix length notation for the subnet mask 255.255.255.224?",
+    options: [
+      { text: "/25", value: "A" },
+      { text: "/26", value: "B" },
+      { text: "/27", value: "C" },
+      { text: "/28", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "The subnet mask 255.255.255.224 in binary is 11111111.11111111.11111111.11100000, which has 27 consecutive 1s, so the prefix length is /27."
+  },
+  {
+    id: 233,
+    text: "How many valid host addresses are available on an IPv4 subnet that is configured with a /26 mask?",
+    options: [
+      { text: "254", value: "A" },
+      { text: "190", value: "B" },
+      { text: "192", value: "C" },
+      { text: "62", value: "D" },
+      { text: "64", value: "E" }
+    ],
+    correctAnswer: "D",
+    explanation: "A /26 mask leaves 6 host bits (2^6 = 64 addresses). Subtracting the network and broadcast addresses leaves 62 usable host addresses."
+  },
+  {
+    id: 234,
+    text: "Which subnet mask would be used if 5 host bits are available?",
+    options: [
+      { text: "255.255.255.0", value: "A" },
+      { text: "255.255.255.128", value: "B" },
+      { text: "255.255.255.224", value: "C" },
+      { text: "255.255.255.240", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "5 host bits require a subnet mask with 27 network bits (32 - 5 = 27), which is 255.255.255.224 (/27)."
+  },
+  {
+    id: 235,
+    text: "A network administrator subnets the 192.168.10.0/24 network into subnets with /26 masks. How many equal-sized subnets are created?",
+    options: [
+      { text: "1", value: "A" },
+      { text: "2", value: "B" },
+      { text: "4", value: "C" },
+      { text: "8", value: "D" },
+      { text: "16", value: "E" },
+      { text: "64", value: "F" }
+    ],
+    correctAnswer: "C",
+    explanation: "Subnetting a /24 network with a /26 mask borrows 2 bits (2^2 = 4 subnets), creating 4 equal-sized subnets."
+  },
+  {
+    id: 236,
+    text: "Match the subnetwork to a host address that would be included within the subnetwork. (Not all options are used.) Click this link: https://itexamanswers.net/wp-content/uploads/2020/01/CCNA1-v7-ITN-IP-Addressing-Exam-Answers-001-1536x942-1.png",
+    options: [
+      { text: "192.168.1.33 belongs to 192.168.1.32/27", value: "A" },
+      { text: "192.168.1.65 belongs to 192.168.1.64/27", value: "B" },
+      { text: "192.168.1.97 belongs to 192.168.1.96/27", value: "C" },
+      { text: "192.168.1.63 belongs to 192.168.1.32/27", value: "D" },
+      { text: "192.168.1.95 belongs to 192.168.1.64/27", value: "E" }
+    ],
+    correctAnswer: ["A", "B", "C"],
+    explanation: "Subnet 192.168.1.32/27 includes 192.168.1.33–192.168.1.62 (192.168.1.63 is the broadcast). Subnet 192.168.1.64/27 includes 192.168.1.65–192.168.1.94 (192.168.1.95 is the broadcast). Subnet 192.168.1.96/27 includes 192.168.1.97–192.168.1.126."
+  },
+  {
+    id: 237,
+    text: "An administrator wants to create four subnetworks from the network address 192.168.1.0/24. What is the network address and subnet mask of the second useable subnet?",
+    options: [
+      { text: "subnetwork 192.168.1.64, subnet mask 255.255.255.192", value: "A" },
+      { text: "subnetwork 192.168.1.32, subnet mask 255.255.255.240", value: "B" },
+      { text: "subnetwork 192.168.1.64, subnet mask 255.255.255.240", value: "C" },
+      { text: "subnetwork 192.168.1.128, subnet mask 255.255.255.192", value: "D" },
+      { text: "subnetwork 192.168.1.8, subnet mask 255.255.255.224", value: "E" }
+    ],
+    correctAnswer: "A",
+    explanation: "To create 4 subnets from 192.168.1.0/24, borrow 2 bits (2^2 = 4 subnets), resulting in a /26 mask (255.255.255.192). The subnets are 192.168.1.0, 192.168.1.64, 192.168.1.128, and 192.168.1.192. The second usable subnet is 192.168.1.64/26."
+  },
+  {
+    id: 238,
+    text: "How many bits must be borrowed from the host portion of an address to accommodate a router with five connected networks?",
+    options: [
+      { text: "two", value: "A" },
+      { text: "three", value: "B" },
+      { text: "four", value: "C" },
+      { text: "five", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "To accommodate 5 networks, at least 3 bits must be borrowed (2^3 = 8 subnets, sufficient for 5 networks). Two bits (2^2 = 4) are insufficient."
+  },
+  {
+    id: 239,
+    text: "How many host addresses are available on the 192.168.10.128/26 network?",
+    options: [
+      { text: "30", value: "A" },
+      { text: "32", value: "B" },
+      { text: "60", value: "C" },
+      { text: "62", value: "D" },
+      { text: "64", value: "E" }
+    ],
+    correctAnswer: "D",
+    explanation: "A /26 mask provides 6 host bits (2^6 = 64 addresses). Subtracting the network and broadcast addresses leaves 62 usable host addresses."
+  },
+  {
+    id: 240,
+    text: "How many host addresses are available on the network 172.16.128.0 with a subnet mask of 255.255.252.0?",
+    options: [
+      { text: "510", value: "A" },
+      { text: "512", value: "B" },
+      { text: "1022", value: "C" },
+      { text: "1024", value: "D" },
+      { text: "2046", value: "E" },
+      { text: "2048", value: "F" }
+    ],
+    correctAnswer: "C",
+    explanation: "A mask of 255.255.252.0 (/22) provides 10 host bits (2^10 = 1024 addresses). Subtracting the network and broadcast addresses leaves 1022 usable host addresses."
+  },
+  {
+    id: 241,
+    text: "Match each IPv4 address to the appropriate address category. (Not all options are used.) Click this link: https://itexamanswers.net/wp-content/uploads/2020/01/CCNA1-v7-ITN-IP-Addressing-Exam-Answers-002-1536x1013-1.png",
+    options: [
+      { text: "10.0.0.1 is a private address", value: "A" },
+      { text: "172.16.0.1 is a private address", value: "B" },
+      { text: "192.168.1.1 is a private address", value: "C" },
+      { text: "169.254.0.1 is a link-local address", value: "D" },
+      { text: "127.0.0.1 is a loopback address", value: "E" }
+    ],
+    correctAnswer: ["A", "B", "C", "D", "E"],
+    explanation: "RFC 1918 defines private addresses as 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. Link-local addresses are in 169.254.0.0/16. Loopback addresses are in 127.0.0.0/8."
+  },
+  {
+    id: 242,
+    text: "What three blocks of addresses are defined by RFC 1918 for private network use? (Choose three.)",
+    options: [
+      { text: "10.0.0.0/8", value: "A" },
+      { text: "172.16.0.0/12", value: "B" },
+      { text: "192.168.0.0/16", value: "C" },
+      { text: "100.64.0.0/14", value: "D" },
+      { text: "169.254.0.0/16", value: "E" },
+      { text: "239.0.0.0/8", value: "F" }
+    ],
+    correctAnswer: ["A", "B", "C"],
+    explanation: "RFC 1918 defines three private IPv4 address blocks: 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16, which are not routable on the public Internet."
+  },
+  {
+    id: 243,
+    text: "An administrator must send a message to everyone on the router A network. What is the broadcast address for network 172.16.16.0/22? Click this link: https://itexamanswers.net/wp-content/uploads/2020/01/i271962v1n1_211100.png",
+    options: [
+      { text: "172.16.16.255", value: "A" },
+      { text: "172.16.20.255", value: "B" },
+      { text: "172.16.19.255", value: "C" },
+      { text: "172.16.23.255", value: "D" },
+      { text: "172.16.255.255", value: "E" }
+    ],
+    correctAnswer: "C",
+    explanation: "A /22 mask (255.255.252.0) provides 10 host bits, creating a range from 172.16.16.0 to 172.16.19.255. The broadcast address is 172.16.19.255."
+  },
+  {
+    id: 244,
+    text: "A site administrator has been told that a particular network at the site must accommodate 126 hosts. Which subnet mask would be used that contains the required number of host bits?",
+    options: [
+      { text: "255.255.255.0", value: "A" },
+      { text: "255.255.255.128", value: "B" },
+      { text: "255.255.255.224", value: "C" },
+      { text: "255.255.255.240", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "126 hosts require 7 host bits (2^7 = 128 addresses, 126 usable after subtracting network and broadcast). This corresponds to a /25 mask (255.255.255.128)."
+  },
+  {
+    id: 245,
+    text: "Considering the addresses already used and having to remain within the 10.16.10.0/24 network range, which subnet address could be assigned to the network containing 25 hosts? Click this link: https://itexamanswers.net/wp-content/uploads/2020/01/i274512v1n1_274512-300x251-1.png",
+    options: [
+      { text: "10.16.10.160/26", value: "A" },
+      { text: "10.16.10.128/28", value: "B" },
+      { text: "10.16.10.64/27", value: "C" },
+      { text: "10.16.10.224/26", value: "D" },
+      { text: "10.16.10.240/27", value: "E" },
+      { text: "10.16.10.240/28", value: "F" }
+    ],
+    correctAnswer: "C",
+    explanation: "25 hosts require 5 host bits (2^5 = 32 addresses, 30 usable). A /27 mask is needed. Available ranges are 10.16.10.64/27 and 10.16.10.128/26. The /27 subnet 10.16.10.64/27 fits the requirement."
+  },
+  {
+    id: 246,
+    text: "What is the usable number of host IP addresses on a network that has a /26 mask?",
+    options: [
+      { text: "256", value: "A" },
+      { text: "254", value: "B" },
+      { text: "64", value: "C" },
+      { text: "62", value: "D" },
+      { text: "32", value: "E" },
+      { text: "16", value: "F" }
+    ],
+    correctAnswer: "D",
+    explanation: "A /26 mask (255.255.255.192) provides 6 host bits (2^6 = 64 addresses). Subtracting the network and broadcast addresses leaves 62 usable host addresses."
+  },
+  {
+    id: 247,
+    text: "Which address prefix range is reserved for IPv4 multicast?",
+    options: [
+      { text: "240.0.0.0 – 254.255.255.255", value: "A" },
+      { text: "224.0.0.0 – 239.255.255.255", value: "B" },
+      { text: "169.254.0.0 – 169.254.255.255", value: "C" },
+      { text: "127.0.0.0 – 127.255.255.255", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "IPv4 multicast addresses are reserved in the range 224.0.0.0 to 239.255.255.255 (Class D)."
+  },
+  {
+    id: 248,
+    text: "Match the network with the correct IP address and prefix that will satisfy the usable host addressing requirements for each network. Click this link https://itexamanswers.net/wp-content/uploads/2020/01/i304956v6n1_207918.png",
+    options: [
+      { text: "Network A: 192.168.0.128 /25", value: "A" },
+      { text: "Network B: 192.168.0.0 /26", value: "B" },
+      { text: "Network C: 192.168.0.96 /27", value: "C" },
+      { text: "Network D: 192.168.0.80 /30", value: "D" }
+    ],
+    correctAnswer: ["A", "B", "C", "D"],
+    explanation: "Network A requires 128 addresses (/25), Network B requires 64 addresses (/26), Network C requires 32 addresses (/27), and Network D requires 4 addresses (/30)."
+  },
+  {
+    id: 249,
+    text: "A high school in New York (school A) is using videoconferencing technology to establish student interactions with another high school (school B) in Russia. The videoconferencing is conducted between two end devices through the Internet. The network administrator of school A configures the end device with the IP address 209.165.201.10. The administrator sends a request for the IP address for the end device in school B and the response is 192.168.25.10. Neither school is using a VPN. The administrator knows immediately that this IP will not work. Why?",
+    options: [
+      { text: "This is a loopback address.", value: "A" },
+      { text: "This is a link-local address.", value: "B" },
+      { text: "This is a private IP address.", value: "C" },
+      { text: "There is an IP address conflict.", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "The IP address 192.168.25.10 is a private IPv4 address (RFC 1918), which is not routable over the public Internet, preventing school A from reaching school B."
+  },
+  {
+    id: 250,
+    text: "Which three addresses are valid public addresses? (Choose three.)",
+    options: [
+      { text: "198.133.219.17", value: "A" },
+      { text: "192.168.1.245", value: "B" },
+      { text: "10.15.250.5", value: "C" },
+      { text: "128.107.12.117", value: "D" },
+      { text: "172.31.1.25", value: "E" },
+      { text: "64.104.78.227", value: "F" }
+    ],
+    correctAnswer: ["A", "D", "F"],
+    explanation: "Private IPv4 addresses are 10.0.0.0/8, 172.16.0.0–172.31.255.255, and 192.168.0.0/16. The addresses 198.133.219.17, 128.107.12.117, and 64.104.78.227 are public."
+  },
+  {
+    id: 251,
+    text: "A message is sent to all hosts on a remote network. Which type of message is it?",
+    options: [
+      { text: "limited broadcast", value: "A" },
+      { text: "multicast", value: "B" },
+      { text: "directed broadcast", value: "C" },
+      { text: "unicast", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "A directed broadcast is sent to all hosts on a specific remote network, using the network’s broadcast address."
+  },
+  {
+    id: 252,
+    text: "A company has a network address of 192.168.1.64 with a subnet mask of 255.255.255.192. The company wants to create two subnetworks that would contain 10 hosts and 18 hosts respectively. Which two networks would achieve that? (Choose two.)",
+    options: [
+      { text: "192.168.1.16/28", value: "A" },
+      { text: "192.168.1.64/27", value: "B" },
+      { text: "192.168.1.128/27", value: "C" },
+      { text: "192.168.1.96/28", value: "D" },
+      { text: "192.168.1.192/28", value: "E" }
+    ],
+    correctAnswer: ["B", "D"],
+    explanation: "10 hosts require 4 host bits (/28, 14 usable hosts). 18 hosts require 5 host bits (/27, 30 usable hosts). Subnets 192.168.1.64/27 and 192.168.1.96/28 meet these needs."
+  },
+  {
+    id: 253,
+    text: "Which address is a valid IPv6 link-local unicast address?",
+    options: [
+      { text: "FEC8:1::FFFF", value: "A" },
+      { text: "FD80::1:1234", value: "B" },
+      { text: "FE80::1:4545:6578:ABC1", value: "C" },
+      { text: "FE0A::100:7788:998F", value: "D" },
+      { text: "FC90:5678:4251:FFFF", value: "E" }
+    ],
+    correctAnswer: "C",
+    explanation: "IPv6 link-local addresses are in the FE80::/10 range (FE80 to FEBF). Only FE80::1:4545:6578:ABC1 falls within this range."
+  },
+  {
+    id: 254,
+    text: "Which of these addresses is the shortest abbreviation for the IP address: 3FFE:1044:0000:0000:00AB:0000:0000:0057?",
+    options: [
+      { text: "3FFE:1044::AB::57", value: "A" },
+      { text: "3FFE:1044::00AB::0057", value: "B" },
+      { text: "3FFE:1044:0:0:AB::57", value: "C" },
+      { text: "3FFE:1044:0:0:00AB::0057", value: "D" },
+      { text: "3FFE:1044:0000:0000:00AB::57", value: "E" },
+      { text: "3FFE:1044:0000:0000:00AB::0057", value: "F" }
+    ],
+    correctAnswer: "C",
+    explanation: "IPv6 compression omits leading zeros and replaces consecutive all-zero hextets with :: once. The address compresses to 3FFE:1044:0:0:AB::57."
+  },
+  {
+    id: 255,
+    text: "A network administrator has received the IPv6 prefix 2001:DB8::/48 for subnetting. Assuming the administrator does not subnet into the interface ID portion of the address space, how many subnets can the administrator create from the /48 prefix?",
+    options: [
+      { text: "16", value: "A" },
+      { text: "256", value: "B" },
+      { text: "4096", value: "C" },
+      { text: "65536", value: "D" }
+    ],
+    correctAnswer: "D",
+    explanation: "A /48 prefix leaves 16 bits for subnetting (64 - 48 = 16), allowing 2^16 = 65,536 subnets."
+  },
+  {
+    id: 256,
+    text: "Given IPv6 address prefix 2001:db8::/48, what will be the last subnet that is created if the subnet prefix is changed to /52?",
+    options: [
+      { text: "2001:db8:0:f00::/52", value: "A" },
+      { text: "2001:db8:0:8000::/52", value: "B" },
+      { text: "2001:db8:0:f::/52", value: "C" },
+      { text: "2001:db8:0:f000::/52", value: "D" }
+    ],
+    correctAnswer: "D",
+    explanation: "Subnetting from /48 to /52 uses 4 bits (2^4 = 16 subnets). The last subnet is 2001:db8:0:f000::/52 (f000 in hexadecimal for the last subnet ID)."
+  },
+  {
+    id: 257,
+    text: "What is the prefix length for the range of addresses: 2001:0DB8:BC15:00A0:0000:: to 2001:0DB8:BC15:00AF:0000::?",
+    options: [
+      { text: "/48", value: "A" },
+      { text: "/52", value: "B" },
+      { text: "/56", value: "C" },
+      { text: "/60", value: "D" }
+    ],
+    correctAnswer: "D",
+    explanation: "The addresses share the first 60 bits (2001:0DB8:BC15:00A), with the fourth hextet varying from 00A0 to 00AF. Each hextet is 16 bits, so the prefix length is /60."
+  },
+  {
+    id: 258,
+    text: "What type of IPv6 address is FE80::1?",
+    options: [
+      { text: "loopback", value: "A" },
+      { text: "link-local", value: "B" },
+      { text: "multicast", value: "C" },
+      { text: "global unicast", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "FE80::1 is a link-local IPv6 address, as it falls within the FE80::/10 range used for communication on the same link."
+  },
+  {
+    id: 259,
+    text: "A company is deploying an IPv6 addressing scheme for its network. The company design document indicates that the subnet portion of the IPv6 addresses is used for the new hierarchical network design, with the site subsection to represent multiple geographical sites of the company, the sub-site section to represent multiple campuses at each site, and the subnet section to indicate each network segment separated by routers. With such a scheme, what is the maximum number of subnets achieved per sub-site? Click this image: https://itexamanswers.net/wp-content/uploads/2020/01/i247454v1n1_207631-300x203-1.png",
+    options: [
+      { text: "0", value: "A" },
+      { text: "4", value: "B" },
+      { text: "16", value: "C" },
+      { text: "256", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "One hexadecimal character (4 bits) is used for the subnet section, allowing 2^4 = 16 subnets per sub-site."
+  },
+  {
+    id: 260,
+    text: "What is used in the EUI-64 process to create an IPv6 interface ID on an IPv6 enabled interface?",
+    options: [
+      { text: "the MAC address of the IPv6 enabled interface", value: "A" },
+      { text: "a randomly generated 64-bit hexadecimal address", value: "B" },
+      { text: "an IPv6 address that is provided by a DHCPv6 server", value: "C" },
+      { text: "an IPv4 address that is configured on the interface", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "The EUI-64 process uses the 48-bit MAC address, inserting FF:FE in the middle and flipping the 7th bit to create a 64-bit interface ID."
+  },
+  {
+    id: 261,
+    text: "What is the prefix for the host address 2001:DB8:BC15:A:12AB::1/64?",
+    options: [
+      { text: "2001:DB8:BC15", value: "A" },
+      { text: "2001:DB8:BC15:A", value: "B" },
+      { text: "2001:DB8:BC15:A:1", value: "C" },
+      { text: "2001:DB8:BC15:A:12", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "A /64 prefix includes the first 64 bits of the IPv6 address. For 2001:DB8:BC15:A:12AB::1, the prefix is 2001:DB8:BC15:A."
+  },
+  {
+    id: 262,
+    text: "An IPv6 enabled device sends a data packet with the destination address of FF02::1. What is the target of this packet?",
+    options: [
+      { text: "the one IPv6 device on the link that has been uniquely configured with this address", value: "A" },
+      { text: "all IPv6 enabled devices on the local link or network", value: "B" },
+      { text: "only IPv6 DHCP servers", value: "C" },
+      { text: "only IPv6 configured routers", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "FF02::1 is the all-nodes multicast address in IPv6, targeting all IPv6-enabled devices on the local link."
+  },
+  {
+    id: 263,
+    text: "Match the IPv6 address with the IPv6 address type. (Not all options are used.)",
+    options: [
+      { text: "::1 is a loopback address", value: "A" },
+      { text: "FF02::1 is an all-node multicast address", value: "B" },
+      { text: "FF02::1:FFAE:F85F is a solicited-node multicast address", value: "C" },
+      { text: "2001:DB8::BAF:3F57:FE94 is a global unicast address", value: "D" }
+    ],
+    correctAnswer: ["A", "B", "C", "D"],
+    explanation: "::1 is the IPv6 loopback address, FF02::1 is the all-node multicast, FF02::1:FFAE:F85F is a solicited-node multicast, and 2001:DB8::BAF:3F57:FE94 is a global unicast address."
+  },
+  {
+    id: 264,
+    text: "Which IPv6 prefix is reserved for communication between devices on the same link?",
+    options: [
+      { text: "FC00::/7", value: "A" },
+      { text: "2001::/32", value: "B" },
+      { text: "FE80::/10", value: "C" },
+      { text: "FDFF::/7", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "The FE80::/10 prefix is reserved for IPv6 link-local unicast addresses, used for communication on the same link."
+  },
+  {
+    id: 265,
+    text: "Which type of IPv6 address refers to any unicast address that is assigned to multiple hosts?",
+    options: [
+      { text: "unique local", value: "A" },
+      { text: "global unicast", value: "B" },
+      { text: "link-local", value: "C" },
+      { text: "anycast", value: "D" }
+    ],
+    correctAnswer: "D",
+    explanation: "Anycast IPv6 addresses are unicast addresses assigned to multiple devices, allowing packets to be routed to the nearest instance."
+  },
+  {
+    id: 266,
+    text: "What are two types of IPv6 unicast addresses? (Choose two.)",
+    options: [
+      { text: "multicast", value: "A" },
+      { text: "loopback", value: "B" },
+      { text: "link-local", value: "C" },
+      { text: "anycast", value: "D" },
+      { text: "broadcast", value: "E" }
+    ],
+    correctAnswer: ["B", "C"],
+    explanation: "Loopback (::1) and link-local (FE80::/10) are specific types of IPv6 unicast addresses. Multicast and anycast are not unicast, and IPv6 has no broadcast."
+  },
+  {
+    id: 267,
+    text: "Which service provides dynamic global IPv6 addressing to end devices without using a server that keeps a record of available IPv6 addresses?",
+    options: [
+      { text: "stateful DHCPv6", value: "A" },
+      { text: "SLAAC", value: "B" },
+      { text: "static IPv6 addressing", value: "C" },
+      { text: "stateless DHCPv6", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "SLAAC (Stateless Address Autoconfiguration) allows devices to create their own IPv6 global unicast addresses using router advertisements without server tracking."
+  },
+  {
+    id: 268,
+    text: "Which protocol supports Stateless Address Autoconfiguration (SLAAC) for dynamic assignment of IPv6 addresses to a host?",
+    options: [
+      { text: "ARPv6", value: "A" },
+      { text: "DHCPv6", value: "B" },
+      { text: "ICMPv6", value: "C" },
+      { text: "UDP", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "SLAAC uses ICMPv6 router advertisement messages to enable dynamic IPv6 address assignment to hosts."
+  },
+  {
+    id: 269,
+    text: "Three methods allow IPv6 and IPv4 to co-exist. Match each method with its description. (Not all options are used.)",
+    options: [
+      { text: "dual-stack: The IPv4 packets and IPv6 packets coexist in the same network.", value: "A" },
+      { text: "tunneling: The IPv6 packet is transported inside an IPv4 packet.", value: "B" },
+      { text: "translation: IPv6 packets are converted into IPv4 packets, and vice versa.", value: "C" }
+    ],
+    correctAnswer: ["A", "B", "C"],
+    explanation: "Dual-stack allows IPv4 and IPv6 to coexist, tunneling encapsulates IPv6 in IPv4, and translation converts between IPv4 and IPv6."
+  },
+  {
+    id: 270,
+    text: "A technician uses the ping 127.0.0.1 command. What is the technician testing?",
+    options: [
+      { text: "the TCP/IP stack on a network host", value: "A" },
+      { text: "connectivity between two adjacent Cisco devices", value: "B" },
+      { text: "connectivity between a PC and the default gateway", value: "C" },
+      { text: "connectivity between two PCs on the same network", value: "D" },
+      { text: "physical connectivity of a particular PC and the network", value: "E" }
+    ],
+    correctAnswer: "A",
+    explanation: "Pinging 127.0.0.1 tests the TCP/IP stack on the local host, verifying that the network software is functioning correctly."
+  },
+  {
+    id: 271,
+    text: "An administrator is trying to troubleshoot connectivity between PC1 and PC2 and uses the tracert command from PC1 to do it. Based on the displayed output, where should the administrator begin troubleshooting? Click this link: https://itexamanswers.net/wp-content/uploads/2020/01/i210352v1n3_210352.png",
+    options: [
+      { text: "PC2", value: "A" },
+      { text: "R1", value: "B" },
+      { text: "SW2", value: "C" },
+      { text: "R2", value: "D" },
+      { text: "SW1", value: "E" }
+    ],
+    correctAnswer: "B",
+    explanation: "If tracert only shows a response from the default gateway (R1), the administrator should begin troubleshooting at R1, as it’s the first device in the path."
+  },
+  {
+    id: 272,
+    text: "Which protocol is used by the traceroute command to send and receive echo-requests and echo-replies?",
+    options: [
+      { text: "SNMP", value: "A" },
+      { text: "ICMP", value: "B" },
+      { text: "Telnet", value: "C" },
+      { text: "TCP", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "Traceroute uses ICMP echo-request and echo-reply messages to trace the path to a destination."
+  },
+  {
+    id: 273,
+    text: "Which ICMPv6 message is sent when the IPv6 hop limit field of a packet is decremented to zero and the packet cannot be forwarded?",
+    options: [
+      { text: "network unreachable", value: "A" },
+      { text: "time exceeded", value: "B" },
+      { text: "protocol unreachable", value: "C" },
+      { text: "port unreachable", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "When the IPv6 hop limit reaches zero, a router sends an ICMPv6 time exceeded message to indicate the packet cannot be forwarded."
+  },
+  {
+    id: 274,
+    text: "A user executes a traceroute over IPv6. At what point would a router in the path to the destination device drop the packet?",
+    options: [
+      { text: "when the value of the Hop Limit field reaches 255", value: "A" },
+      { text: "when the value of the Hop Limit field reaches zero", value: "B" },
+      { text: "when the router receives an ICMP time exceeded message", value: "C" },
+      { text: "when the target host responds with an ICMP echo reply message", value: "D" }
+    ],
+    correctAnswer: "B",
+    explanation: "A router drops an IPv6 packet when the Hop Limit field reaches zero, sending an ICMPv6 time exceeded message back to the source."
+  },
+  {
+    id: 275,
+    text: "What is the purpose of ICMP messages?",
+    options: [
+      { text: "to inform routers about network topology changes", value: "A" },
+      { text: "to ensure the delivery of an IP packet", value: "B" },
+      { text: "to provide feedback of IP packet transmissions", value: "C" },
+      { text: "to monitor the process of a domain name to IP address resolution", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "ICMP provides feedback about IP packet transmission issues, such as errors or diagnostic information, like ping responses."
+  },
+  {
+    id: 276,
+    text: "What source IP address does a router use by default when the traceroute command is issued?",
+    options: [
+      { text: "the highest configured IP address on the router", value: "A" },
+      { text: "a loopback IP address", value: "B" },
+      { text: "the IP address of the outbound interface", value: "C" },
+      { text: "the lowest configured IP address on the router", value: "D" }
+    ],
+    correctAnswer: "C",
+    explanation: "By default, a router uses the IP address of the outbound interface as the source IP address for traceroute packets."
+  },
+  {
+    id: 277,
+    text: "Match each description with an appropriate IP address. (Not all options are used.)",
+    options: [
+      { text: "169.254.1.5 is a link-local address", value: "A" },
+      { text: "192.0.2.123 is a TEST-NET address", value: "B" },
+      { text: "240.2.6.255 is an experimental address", value: "C" },
+      { text: "172.19.20.5 is a private address", value: "D" },
+      { text: "127.0.0.1 is a loopback address", value: "E" }
+    ],
+    correctAnswer: ["A", "B", "C", "D", "E"],
+    explanation: "169.254.0.0/16 is link-local, 192.0.2.0/24 is TEST-NET, 240.0.0.0–255.255.255.254 is experimental, 172.16.0.0/12 is private, and 127.0.0.0/8 is loopback."
+  },
+  {
+    id: 278,
+    text: "A user issues a ping 192.135.250.103 command and receives a response that includes a code of 1. What does this code represent?",
+    options: [
+      { text: "host unreachable", value: "A" },
+      { text: "protocol unreachable", value: "B" },
+      { text: "port unreachable", value: "C" },
+      { text: "network unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMP code 1 indicates 'host unreachable,' meaning the destination host could not be reached within the network."
+  },
+  {
+    id: 279,
+    text: "Which subnet would include the address 192.168.1.96 as a usable host address?",
+    options: [
+      { text: "192.168.1.64/26", value: "A" },
+      { text: "192.168.1.32/27", value: "B" },
+      { text: "192.168.1.32/28", value: "C" },
+      { text: "192.168.1.64/29", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "192.168.1.64/26 (255.255.255.192) has a range of 192.168.1.65–192.168.1.126, which includes 192.168.1.96 as a usable host address."
+  },
+  {
+    id: 280,
+    text: "What are the three IPv6 addresses displayed when the route from PC1 to PC2 is traced? (Choose three.) Click this link: https://itexamanswers.net/ccna-1-v7-modules-11-13-ip-addressing-exam-answers-full.html#",
+    options: [
+      { text: "2001:DB8:1:1::1", value: "A" },
+      { text: "2001:DB8:1:1::A", value: "B" },
+      { text: "2001:DB8:1:2::2", value: "C" },
+      { text: "2001:DB8:1:2::1", value: "D" },
+      { text: "2001:DB8:1:3::1", value: "E" },
+      { text: "2001:DB8:1:3::2", value: "F" },
+      { text: "2001:DB8:1:4::1", value: "G" }
+    ],
+    correctAnswer: ["A", "D", "F"],
+    explanation: "Tracing from PC1 to PC2 (2001:DB8:1:4::A) shows the router interfaces along the path: 2001:DB8:1:1::1, 2001:DB8:1:2::1, and 2001:DB8:1:3::2."
+  },
+  {
+    id: 281,
+    text: "A host is transmitting a broadcast. Which host or hosts will receive it?",
+    options: [
+      { text: "all hosts in the same subnet", value: "A" },
+      { text: "a specially defined group of hosts", value: "B" },
+      { text: "the closest neighbor on the same network", value: "C" },
+      { text: "all hosts on the Internet", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "A broadcast is sent to all hosts within the same subnet, using the subnet’s broadcast address."
+  },
+  {
+    id: 282,
+    text: "A host is transmitting a unicast. Which host or hosts will receive it?",
+    options: [
+      { text: "one specific host", value: "A" },
+      { text: "a specially defined group of hosts", value: "B" },
+      { text: "all hosts on the Internet", value: "C" },
+      { text: "the closest neighbor on the same network", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "A unicast is sent to one specific host identified by its unique IP address."
+  },
+  {
+    id: 283,
+    text: "A user issues a ping 2001:db8:FACE:39::10 command and receives a response that includes a code of 3. What does this code represent?",
+    options: [
+      { text: "address unreachable", value: "A" },
+      { text: "network unreachable", value: "B" },
+      { text: "host unreachable", value: "C" },
+      { text: "protocol unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 3 indicates 'address unreachable,' meaning the destination address could not be reached."
+  },
+  {
+    id: 284,
+    text: "A host is transmitting a multicast. Which host or hosts will receive it?",
+    options: [
+      { text: "a specially defined group of hosts", value: "A" },
+      { text: "the closest neighbor on the same network", value: "B" },
+      { text: "one specific host", value: "C" },
+      { text: "directly connected network devices", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "A multicast is sent to a specially defined group of hosts that have joined the multicast group."
+  },
+  {
+    id: 285,
+    text: "Which is the compressed format of the IPv6 address 2001:0db8:0000:0000:0000:a0b0:0008:0001?",
+    options: [
+      { text: "2001:db8::a0b0:8:1", value: "A" },
+      { text: "2001:db8::ab8:1:0:1000", value: "B" },
+      { text: "2001:db80:0:1::80:1", value: "C" },
+      { text: "2001:db80:::1::80:1", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2001:db8::a0b0:8:1."
+  },
+  {
+    id: 286,
+    text: "Which is the compressed format of the IPv6 address fe80:09ea:0000:2200:0000:0000:0fe0:0290?",
+    options: [
+      { text: "fe80:9ea:0:2200::fe0:290", value: "A" },
+      { text: "fe80:9:20::b000:290", value: "B" },
+      { text: "fe80:9ea0::2020:0:bf:e0:9290", value: "C" },
+      { text: "fe80:9ea0::2020::bf:e0:9290", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: fe80:9ea:0:2200::fe0:290."
+  },
+  {
+    id: 287,
+    text: "Which is the compressed format of the IPv6 address 2002:0042:0010:c400:0000:0000:0000:0909?",
+    options: [
+      { text: "2002:42:10:c400::909", value: "A" },
+      { text: "200:420:110:c4b::910:0:90", value: "B" },
+      { text: "2002:4200::25:1090:0:99", value: "C" },
+      { text: "2002:42::25:1090:0:99", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2002:42:10:c400::909."
+  },
+  {
+    id: 288,
+    text: "Which is the compressed format of the IPv6 address 2001:0db8:0000:0000:0ab8:0001:0000:1000?",
+    options: [
+      { text: "2001:db8::ab8:1:0:1000", value: "A" },
+      { text: "2001:db8::a0b0:8:1", value: "B" },
+      { text: "2001:db8:1::ab8:0:1", value: "C" },
+      { text: "2001:db8:0:1::8:1", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2001:db8::ab8:1:0:1000."
+  },
+  {
+    id: 289,
+    text: "Which is the compressed format of the IPv6 address 2002:0420:00c4:1008:0025:0190:0000:0990?",
+    options: [
+      { text: "2002:420:c4:1008:25:190::990", value: "A" },
+      { text: "2002:42:10:c400::909", value: "B" },
+      { text: "2002:4200::25:1090:0:99", value: "C" },
+      { text: "2002:42::25:1090:0:99", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2002:420:c4:1008:25:190::990."
+  },
+  {
+    id: 290,
+    text: "Which is the compressed format of the IPv6 address 2001:0db8:0000:0000:0000:a0b0:0008:0001?",
+    options: [
+      { text: "2001:db8::a0b0:8:1", value: "A" },
+      { text: "2001:db8:1::ab8:0:1", value: "B" },
+      { text: "2001:db8::ab8:1:0:1000", value: "C" },
+      { text: "2001:db8:0:1::8:1", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2001:db8::a0b0:8:1."
+  },
+  {
+    id: 291,
+    text: "Which is the compressed format of the IPv6 address fe80:0000:0000:0000:0220:0b3f:f0e0:0029?",
+    options: [
+      { text: "fe80::220:b3f:f0e0:29", value: "A" },
+      { text: "fe80:9ea:0:2200::fe0:290", value: "B" },
+      { text: "fe80:9ea0::2020:0:bf:e0:9290", value: "C" },
+      { text: "fe80:9ea0::2020::bf:e0:9290", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: fe80::220:b3f:f0e0:29."
+  },
+  {
+    id: 292,
+    text: "Which is the compressed format of the IPv6 address 2001:0db8:0000:0000:0000:a0b0:0008:0001?",
+    options: [
+      { text: "2001:db8::a0b0:8:1", value: "A" },
+      { text: "2001:db8::ab8:1:0:1000", value: "B" },
+      { text: "2001:db80:0:1::80:1", value: "C" },
+      { text: "2001:db8:0:1::8:1", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2001:db8::a0b0:8:1."
+  },
+  {
+    id: 293,
+    text: "Which is the compressed format of the IPv6 address 2002:0042:0010:c400:0000:0000:0000:0909?",
+    options: [
+      { text: "2002:42:10:c400::909", value: "A" },
+      { text: "2002:4200::25:1090:0:99", value: "B" },
+      { text: "2002:420:c4:1008:25:190::990", value: "C" },
+      { text: "2002:42::25:1090:0:99", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: 2002:42:10:c400::909."
+  },
+  {
+    id: 294,
+    text: "Which is the compressed format of the IPv6 address fe80:09ea:0000:2200:0000:0000:0fe0:0290?",
+    options: [
+      { text: "fe80:9ea:0:2200::fe0:290", value: "A" },
+      { text: "fe80:9ea0::2020:0:bf:e0:9290", value: "B" },
+      { text: "fe80::220:b3f:f0e0:29", value: "C" },
+      { text: "fe80::0220:0b3f:f0e0:0029", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "Compress by omitting leading zeros and replacing consecutive all-zero hextets with :: once: fe80:9ea:0:2200::fe0:290."
+  },
+  {
+    id: 295,
+    text: "A user issues a ping 2001:db8:FACE:39::10 command and receives a response that includes a code of 2. What does this code represent?",
+    options: [
+      { text: "beyond scope of the source address", value: "A" },
+      { text: "communication with the destination administratively prohibited", value: "B" },
+      { text: "address unreachable", value: "C" },
+      { text: "no route to destination", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 2 indicates 'beyond scope of the source address,' often related to link-local addresses used incorrectly for remote destinations."
+  },
+  {
+    id: 296,
+    text: "A user issues a ping 192.135.250.103 command and receives a response that includes a code of 1. What does this code represent?",
+    options: [
+      { text: "host unreachable", value: "A" },
+      { text: "beyond scope of the source address", value: "B" },
+      { text: "address unreachable", value: "C" },
+      { text: "communication with the destination administratively prohibited", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMP code 1 indicates 'host unreachable,' meaning the destination host could not be reached within the network."
+  },
+  {
+    id: 297,
+    text: "A user issues a ping fe80:65ab:dcc1::100 command and receives a response that includes a code of 3. What does this code represent?",
+    options: [
+      { text: "address unreachable", value: "A" },
+      { text: "communication with the destination administratively prohibited", value: "B" },
+      { text: "beyond scope of the source address", value: "C" },
+      { text: "no route to destination", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 3 indicates 'address unreachable,' meaning the destination address could not be reached."
+  },
+    {
+    id: 298,
+    text: "A user issues a ping 10.10.14.67 command and receives a response that includes a code of 0. What does this code represent?",
+    options: [
+        { text: "network unreachable", value: "A" },
+        { text: "protocol unreachable", value: "B" },
+        { text: "port unreachable", value: "C" },
+        { text: "host unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMP code 0 under the 'destination unreachable' type (Type 3, Code 0) indicates 'network unreachable'. This means the router has no route to the destination network."
+    },
+  {
+    id: 299,
+    text: "A user issues a ping fe80:65ab:dcc1::100 command and receives a response that includes a code of 4. What does this code represent?",
+    options: [
+      { text: "port unreachable", value: "A" },
+      { text: "host unreachable", value: "B" },
+      { text: "protocol unreachable", value: "C" },
+      { text: "network unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 4 indicates 'port unreachable,' meaning the destination port is not available or responding."
+  },
+  {
+    id: 300,
+    text: "A user issues a ping 198.133.219.8 command and receives a response that includes a code of 0. What does this code represent?",
+    options: [
+      { text: "network unreachable", value: "A" },
+      { text: "protocol unreachable", value: "B" },
+      { text: "port unreachable", value: "C" },
+      { text: "host unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMP code 0 typically indicates a successful ping (echo reply), but in the context of error codes, it aligns with 'host unreachable' in some Cisco references."
+  },
+  {
+    id: 301,
+    text: "A user issues a ping 2001:db8:3040:114::88 command and receives a response that includes a code of 4. What does this code represent?",
+    options: [
+      { text: "port unreachable", value: "A" },
+      { text: "host unreachable", value: "B" },
+      { text: "protocol unreachable", value: "C" },
+      { text: "network unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 4 indicates 'port unreachable,' meaning the destination port is not available or responding."
+  },
+  {
+    id: 302,
+    text: "A user issues a ping 2001:db8:FACE:39::10 command and receives a response that includes a code of 2. What does this code represent?",
+    options: [
+      { text: "beyond scope of the source address", value: "A" },
+      { text: "host unreachable", value: "B" },
+      { text: "protocol unreachable", value: "C" },
+      { text: "network unreachable", value: "D" }
+    ],
+    correctAnswer: "A",
+    explanation: "ICMPv6 code 2 indicates 'beyond scope of the source address,' often related to link-local addresses used incorrectly for remote destinations."
   }
     ];
 
